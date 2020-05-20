@@ -23,7 +23,7 @@ startButton.addEventListener('click', (e) => {
 // Get a Random Phrase from phrases array
 const getRandomPhraseAsArray = (arr) => {
     let i = Math.floor(Math.random() * arr.length);
-    return arr[i].split('');
+    return arr[i];
 };
 getRandomPhraseAsArray(phrases);
 
@@ -36,8 +36,7 @@ const addPhraseToDisplay = (arr) => {
         const listItem = document.createTextNode(arr[i]);
         ul.appendChild(listElement);
         listElement.appendChild(listItem);
-        if (arr[i] === '') {
-            // listElement.style.display = 'none';
+        if (arr[i] === ' ') {
             listElement.className = 'space';
         } else {
             listElement.className = 'letter';
@@ -46,3 +45,14 @@ const addPhraseToDisplay = (arr) => {
 };
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
+
+//Check the Letter
+const checkLetter = (button) => {
+    const letter = document.querySelector('.letter');
+    for (i = 0; i < letter.length; i += 0) {
+        const chosenLetter = letter[i];
+        if (button === chosenLetter.textContent.toLowerCase()) {
+            chosenLetter.className = '.show';
+        } 
+    }
+};
