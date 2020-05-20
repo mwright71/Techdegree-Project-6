@@ -7,10 +7,11 @@ let missed = 0;
 // Phrases Array
 let phrases = [
     'When we All Get to Heaven',
-    'When the Roll is Called Up yonder', 
+    'Amazing Grace', 
     'Farther Along', 
     'It is Well With my Soul', 
-    'Sweet Beaulah Land'];
+    'Sweet Beaulah Land',
+    'Call me Gone'];
 
 // Hide overlay by pressing start game
 
@@ -102,12 +103,13 @@ const checkWin = () => {
       }
 }
 
+
 // Reset Game
 const reset = () => {
     let buttons = document.querySelectorAll('BUTTON');
     for ( let i = 0; i < buttons.length; i++) {
         buttons[i].removeAttribute('disabled');
-        buttons[i].setAttribute('class', '');
+        buttons[i].setAttribute('class', ' ');
     }
 
     let heartLives = document.querySelectorAll('img');
@@ -124,4 +126,4 @@ const reset = () => {
     addPhraseToDisplay(phraseArray);
 
     missed = 0;
-}
+};
